@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `invoices` (
-  `id` varchar(45) NOT NULL,
+  `id` int unsigned NOT NULL,
   `invoice` varchar(45) DEFAULT NULL,
-  `amount` varchar(45) DEFAULT NULL,
-  `date` varchar(45) DEFAULT NULL,
+  `amount` decimal(13,2) DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Invoice table test';
@@ -38,7 +38,7 @@ CREATE TABLE `invoices` (
 
 LOCK TABLES `invoices` WRITE;
 /*!40000 ALTER TABLE `invoices` DISABLE KEYS */;
-INSERT INTO `invoices` VALUES ('01','Basic Plan','$860','Nov 22, 2021','Subscribed'),('02','Premium Plan','$1200','Nov 10, 2021','Unsubscribed'),('03','Basic Plan','$860','Nov 19, 2021','Subscribed'),('04','Corporate Plan','$1599','Nov 22, 2021','Subscribed'),('05','Teste Plan2','$1000','Nov 22, 2025','Subscribed');
+INSERT INTO `invoices` VALUES (1,'Basic Plan',860.00,'2021-11-22','Subscribed'),(2,'Premium Plan',1200.00,'2021-11-10','Unsubscribed'),(3,'Basic Plan',860.00,'2021-11-19','Subscribed'),(4,'Corporate Plan',1599.00,'2021-11-22','Subscribed'),(5,'Teste Plan2',1000.00,'2025-08-26','Subscribed');
 /*!40000 ALTER TABLE `invoices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-27 10:51:46
+-- Dump completed on 2025-08-27 12:35:39
